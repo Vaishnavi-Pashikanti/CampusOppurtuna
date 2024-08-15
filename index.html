@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusOppurtuna</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+</head>
+<body> 
+    
+    <nav>
+
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Register</li>
+            <li><a href="./events.html">Events</a></li>
+            <li>All Articles</li>
+        </ul>
+    </nav>
+    <br>
+    <!-- <h2>Hello {{stuId}}</h1> -->
+    <h1>Campus Oppurtuna</h1>
+    <main>
+        <div id="content">
+            <h2>Check For Scholarship</h2>
+            
+            <form action="/home" method="post">
+                <input type="text" name="studentId" id="" placeholder="Enter your Roll Number">
+                <button type="submit">Submit</button>
+            </form>
+        
+            <div id="resultContainer">
+                {% if data %}
+                    <div>
+                        {% for d in data %}
+                            {% for k, v in d.items() %}
+                                {% if k == 'Scholarship Name' or k == 'Amount' or k == 'Description' or k == 'Link' %}
+                                    <h2>{{ k }}</h2>
+                                    <p>{{ v }}</p>
+                                {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>

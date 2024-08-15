@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusOppurtunaLogin</title>
+    <style>
+        body {
+        margin: 0;
+        height: 100vh; /* Ensure full viewport height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+
+</head>
+<body>
+    <br>
+    <br>
+    
+    <br>
+    <form action="/" method="post">
+        <input type="email" name="email" placeholder="Enter your registered Email">
+        <input type="password" name="password" id="" placeholder="Enter Password">
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
