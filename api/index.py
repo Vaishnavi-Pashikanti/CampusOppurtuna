@@ -35,4 +35,6 @@ def login():
         else:
             print("wrong password")
             return redirect('/')
-app.run(use_reloader=True)
+if __main__=="__main__":
+    app.run(use_reloader=True)
+
